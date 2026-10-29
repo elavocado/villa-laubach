@@ -10,6 +10,13 @@ ASSETS.mkdir(parents=True,exist_ok=True)
 ORIGIN='https://villa-laubach-eifel.elavocado.chatgpt.site'
 BOOKING='https://www.airbnb.com/rooms/894064898221568527'
 images={
+ 'dining':('469790301.jpg','Essbereich mit hohen Fenstern','Dining area with tall windows'),
+ 'swing':('469790359.jpg','Gartenschaukel im Grünen','Garden swing among the greenery'),
+ 'hall':('469790368.jpg','Flur mit Spiegel und Treppenaufgang','Hallway with a mirror and staircase'),
+ 'wood':('469790360.jpg','Brennholz und Details im Wohnbereich','Firewood and details in the living area'),
+ 'terracedetail':('469790417.jpg','Blumenkästen und gedeckter Terrassentisch','Window flowers and the terrace table'),
+ 'village':('laubach-st-josef-2020.jpg','St. Josef im Dorf Laubach','St. Josef in the village of Laubach'),
+ 'valley':('kaulenbachtal-2023.jpg','Landschaft im Kaulenbachtal, 2023','Kaulenbach valley landscape, 2023'),
  'house':('469790413.jpg','Fassade und Terrasse der Villa Laubach','Façade and terrace of Villa Laubach'),
  'terrace':('469790334.jpg','Esstisch auf der Terrasse','Dining table on the terrace'),
  'living':('469790306.jpg','Wohnbereich der Villa Laubach','Living area at Villa Laubach'),
@@ -76,7 +83,7 @@ def home(lang):
 <section class="story-split wrap"><div class="story-images">{img('stairs',lang)}{img('detail',lang,'detail-photo')}<span class="vertical-label">EIN HAUS MIT GESCHICHTE / A HOUSE WITH A STORY</span></div><div class="section-copy"><span class="eyebrow">{'EIN NEUES KAPITEL' if lang=='de' else 'A NEW CHAPTER'}</span><h2>{c['story']}</h2><p>{c['storytext']}</p><a class="text-link" href="{href(lang,'story')}">{c['storylink']} {arrow}</a><small class="history-note">{'* Ältester Gebäudeteil laut Denkmalverzeichnis: 1842; weiterer Teil um 1900.' if lang=='de' else '* Heritage register: oldest building section 1842; another section around 1900.'}</small></div></section>
 <section class="living-section"><div class="wrap section-heading"><div><span class="eyebrow">{'DAS HAUS' if lang=='de' else 'THE HOUSE'}</span><h2>{c['rooms']}</h2></div><p>{c['roomstext']}</p></div><div class="living-grid wrap"><a href="{href(lang,'house')}">{img('living',lang)}<span>{'Zusammensein' if lang=='de' else 'Time together'} {arrow}</span></a><a href="{href(lang,'house')}">{img('bedroom',lang)}<span>{'Zur Ruhe kommen' if lang=='de' else 'Rest and unwind'} {arrow}</span></a><a href="{href(lang,'house')}">{img('terrace',lang)}<span>{'Draußen genießen' if lang=='de' else 'Enjoy the outdoors'} {arrow}</span></a></div></section>
 <section class="region-section wrap"><div class="section-heading"><div><span class="eyebrow">EIFEL & MOSEL</span><h2>{c['region']}</h2></div><div><p>{c['regiontext']}</p><a class="text-link" href="{href(lang,'explore')}">{c['regionlink']} {arrow}</a></div></div>{cards(lang)}</section>
-<section class="wide-photo">{img('mosel',lang)}<div><span>MOSELSCHLEIFE BEI BREMM</span><p>{'Die Freiheit, den Tag<br>einfach auf sich zukommen zu lassen.' if lang=='de' else 'The freedom to let<br>the day unfold.'}</p></div></section>{closing(lang)}'''
+<section class="wide-photo">{img('mosel',lang)}<div><span>MOSELSCHLEIFE BEI BREMM</span><p>{'Die Freiheit, den Tag<br>einfach auf sich zukommen zu lassen.' if lang=='de' else 'The freedom to let<br>the day unfold.'}</p></div></section>{visual_story(lang)}{closing(lang)}'''
 
 def house(lang):
  de=lang=='de';c=copy[lang]
@@ -88,6 +95,17 @@ def house(lang):
  out+=f'''<section class="amenities wrap"><span class="eyebrow">{'GUT ZU WISSEN' if de else 'GOOD TO KNOW'}</span><h2>{'Das gehört dazu.' if de else 'Make yourself at home.'}</h2><div class="amenity-grid">{''.join('<span>'+x+'</span>' for x in (['WLAN','Küche','Waschmaschine','Parkplätze am Haus','Terrasse','TV'] if de else ['Wi-Fi','Kitchen','Washing machine','On-site parking','Terrace','TV']))}</div><div class="info-note"><b>{'Ihre Unterkunft im Haus' if de else 'Your accommodation in the building'}</b><p>{'Die Gästeunterkunft ist eine eigenständige Wohneinheit. Im selben Gebäude gibt es ein separates Loft, in dem sich der Gastgeber zeitweise aufhalten kann. Das Haus verfügt über Treppen. Klären Sie besondere Anforderungen und die Nutzung der Außenbereiche vor Ihrer Buchung direkt mit dem Gastgeber.' if de else 'The guest accommodation is a self-contained unit. A separate loft in the same building may sometimes be occupied by the host. There are stairs in the house. Please discuss any specific needs and the use of outdoor areas directly with the host before booking.'}</p></div></section>{closing(lang)}'''
  return out
 
+def visual_story(lang):
+ de=lang=='de'
+ items=[('dining','Ein Tisch. Viele Geschichten.','One table. So many stories.'),('swing','Einfach einmal bleiben.','A little longer in the garden.'),('hall','Charakter in jedem Winkel.','Character around every corner.'),('terracedetail','Der Tag darf warten.','Let the day wait.')]
+ out=f'<section id="experience" class="visual-story wrap"><span class="eyebrow">{"DAS GEFÜHL, HIER ZU SEIN" if de else "THE FEELING OF BEING HERE"}</span><h2>{"Nicht nur übernachten.<br><em>Hier ankommen.</em>" if de else "More than a place to sleep.<br><em>A place to settle in.</em>"}</h2><div class="story-mosaic">'
+ for k,td,te in items:out+=f'<figure>{img(k,lang)}<figcaption>{td if de else te}</figcaption></figure>'
+ return out+'</div></section>'
+
+def reading_room(lang):
+ de=lang=='de'
+ return f'''<section id="reading" class="reading-room wrap"><div class="reading-intro"><span class="eyebrow">{'GESCHICHTEN & LEKTÜRE' if de else 'STORIES & FURTHER READING'}</span><h2>{'Ein Ort, der<br><em>Neugier weckt.</em>' if de else 'A place that<br><em>makes you curious.</em>'}</h2><p>{'Lernen Sie das Dorf und die Geschichte des Hauses aus anderen Perspektiven kennen.' if de else 'Discover the village and the history of the house through other perspectives.'}</p></div><div class="reading-cards"><article><span class="reading-type">COC·PRESSE · 02.09.2026</span><h3>Laubach in der Eifel: Schieferdorf über dem Kaulenbachtal</h3><p>{'Ein Porträt von Laubach, seiner Schieferlandschaft und seinen Kulturdenkmälern. Der Beitrag nennt auch die ehemalige Schule im Hohlweg 2.' if de else 'A portrait of Laubach, its slate landscape and its heritage. The article also mentions the former school at Hohlweg 2.'}</p><a class="text-link" href="https://coc-presse.de/ausflugsziele/laubach-eifel/" target="_blank" rel="noopener noreferrer">{'Artikel lesen (Deutsch)' if de else 'Read the article (German)'} {arrow}</a><small>{'Ein Beitrag über das Dorf, keine Bewertung der Unterkunft.' if de else 'Coverage of the village, rather than a review of the accommodation.'}</small></article><article><span class="reading-type">GDKE · KULTURERBE / HERITAGE</span><h3>{'Die Geschichte ist dokumentiert.' if de else 'A history recorded in the archives.'}</h3><p>{'Das offizielle Denkmalverzeichnis datiert den älteren Teil der ehemaligen Schule auf 1842 und einen weiteren Gebäudeteil auf die Zeit um 1900.' if de else 'The official heritage register dates the older part of the former school to 1842, with a further section dating from around 1900.'}</p><a class="text-link" href="https://gdke.rlp.de/fileadmin/gdke/Service/Cochem-Zell_2026_04_22.pdf" target="_blank" rel="noopener noreferrer">{'Denkmalverzeichnis · Seite 47' if de else 'View the heritage register · page 47'} {arrow}</a></article></div></section>'''
+
 def story(lang):
  de=lang=='de';c=copy[lang]
  out=intro(lang,'UNSERE GESCHICHTE' if de else 'OUR STORY','Alte Mauern.<br><em>Neue Erinnerungen.</em>' if de else 'Old walls.<br><em>New memories.</em>','Ein ehemaliges Schulhaus, ein Ort mit Charakter und eine neue Art, hier Zeit zu verbringen.' if de else 'A former schoolhouse, a place with character and a new way to spend time here.')
@@ -96,7 +114,7 @@ def story(lang):
  timeline=[('1455','Laubach wird erstmals urkundlich erwähnt.','The first documented mention of Laubach.'),('1842','Der ältere Teil des Schulhauses entsteht.','The older section of the schoolhouse dates from this year.'),('um 1900' if de else 'c. 1900','Ein weiterer Gebäudeteil ergänzt das Haus.','Another section is added to the building.'),('Heute' if de else 'Today','Ein Ort für Ihre Zeit in der Eifel.','A setting for your time in the Eifel.')]
  out+='<div class="timeline wrap">'+''.join(f'<div><b>{year}</b><p>{td if de else te}</p></div>' for year,td,te in timeline)+'</div>'
  out+=f'<section class="history-region wrap">{img("oldcochem",lang)}<div><span class="eyebrow">{'DIE REGION DAMALS' if de else 'THE REGION IN THE PAST'}</span><h2>{'Geschichten, die<br><em>weiterführen.</em>' if de else 'Stories that<br><em>lead you further.</em>'}</h2><p>{'Auch außerhalb des Hauses begegnen Ihnen Spuren der Vergangenheit: im Kaulenbachtal, in den Fachwerkorten der Eifel und in den alten Städten an der Mosel.' if de else 'Traces of the past continue beyond the house: in the Kaulenbach valley, the timber-framed villages of the Eifel and the old towns along the Moselle.'}</p><small>{'Historische Ansicht von Cochem, 1890–1905. Keine Aufnahme der Villa.' if de else 'Historic view of Cochem, 1890–1905. This is not a photograph of the villa.'}</small></div></section>'+closing(lang)
- return out
+ return out.replace(closing(lang),visual_story(lang)+reading_room(lang)+closing(lang))
 
 def explore(lang):
  de=lang=='de'
@@ -113,7 +131,7 @@ def gallery(lang):
  de=lang=='de'
  out=intro(lang,'VILLA LAUBACH','Ein erster Blick.<br><em>Und viele kleine Details.</em>' if de else 'A first glimpse.<br><em>And the little details.</em>','Lernen Sie das Haus und seine Umgebung in Bildern kennen.' if de else 'Get to know the house and its surroundings through photographs.')
  out+=f'<section class="wrap gallery-section"><div class="filters" role="group" aria-label="{'Bilder filtern' if de else 'Filter photographs'}">'+''.join(f'<button data-filter="{value}" aria-pressed="{str(value=="all").lower()}">{label}</button>' for value,label in [('all','Alle' if de else 'All'),('house','Das Haus' if de else 'The house'),('outdoor','Draußen' if de else 'Outdoors'),('region','Die Region' if de else 'The region')])+'</div><div class="photo-grid">'
- for k,category in [('house','outdoor'),('living','house'),('bedroom','house'),('stairs','house'),('terrace','outdoor'),('kitchen','house'),('bedroom2','house'),('garden','outdoor'),('detail','outdoor'),('monreal','region'),('ulmen','region'),('cochem','region'),('mosel','region')]:
+ for k,category in [('house','outdoor'),('living','house'),('bedroom','house'),('stairs','house'),('terrace','outdoor'),('kitchen','house'),('bedroom2','house'),('garden','outdoor'),('detail','outdoor'),('dining','house'),('swing','outdoor'),('hall','house'),('wood','house'),('terracedetail','outdoor'),('stove','house'),('village','region'),('valley','region'),('kaulen','region'),('martental','region'),('geierlay','region'),('oldcochem','region'),('monreal','region'),('ulmen','region'),('cochem','region'),('mosel','region')]:
   out+=f'<button class="gallery-item" data-category="{category}" data-image="{k}" aria-label="{copy[lang]["view"]}: {html.escape(images[k][1 if de else 2])}">{img(k,lang)}<span>{images[k][1 if de else 2]} <span aria-hidden="true">+</span></span></button>'
  out+=f'</div><p class="gallery-note">{'Die Aufnahmen der Ausflugsziele zeigen die Region und keine Aussicht vom Haus. Bildnachweise finden Sie im Fußbereich.' if de else 'Excursion photographs show the region, not views from the house. Image credits are linked in the footer.'}</p></section><dialog class="lightbox"><button class="lightbox-close" aria-label="{copy[lang]["close"]}">×</button><button class="lightbox-prev" aria-label="{copy[lang]["prev"]}">←</button><figure><img alt=""><figcaption></figcaption></figure><button class="lightbox-next" aria-label="{copy[lang]["next"]}">→</button></dialog>'
  return out+closing(lang)
@@ -158,4 +176,4 @@ for lang in ['de','en']:
 (ASSETS/'favicon.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="10" fill="#35483c"/><path d="M12 30 32 13l20 17M19 26v27h26V26M27 53V37h10v16" fill="none" stroke="#f6f1e7" stroke-width="3"/></svg>',encoding='utf-8')
 (DIST/'robots.txt').write_text('User-agent: *\nDisallow: /\n',encoding='utf-8')
 (DIST/'_headers').write_text('/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Robots-Tag: noindex, nofollow\n',encoding='utf-8')
-print('Generated 18 bilingual pages, entry page and 18 optimized photographs.')
+print(f'Generated 18 bilingual pages and {len(images)} optimized photographs.')
