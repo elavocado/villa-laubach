@@ -187,5 +187,8 @@ if BASE_PATH:
   markup=page.read_text(encoding='utf-8')
   markup=re.sub(r'(href|src)="/(?!/)',lambda m:m.group(1)+'="'+BASE_PATH+'/',markup)
   markup=markup.replace('content="0;url=/','content="0;url='+BASE_PATH+'/')
+  markup=markup.replace('Private Vorschau','Website-Vorschau').replace('Private preview','Website preview').replace('private Vorschau','Website-Vorschau').replace('private preview','website preview')
+  markup=markup.replace('Die Anmeldung für den Zugriff auf diese Website-Vorschau wird vom Hostinganbieter verwaltet.','Diese Vorschau wird öffentlich auf GitHub Pages gehostet und erfordert keine Anmeldung.')
+  markup=markup.replace('Sign-in for this website preview is managed by the hosting provider.','This preview is publicly hosted on GitHub Pages and does not require sign-in.')
   page.write_text(markup,encoding='utf-8')
 (DIST/'.nojekyll').write_text('',encoding='utf-8')
