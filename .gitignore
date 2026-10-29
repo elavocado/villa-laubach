@@ -1,0 +1,18 @@
+# Local Python environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+# Local build packages and screenshots
+*.tar
+*.tar.gz
+preview-*.png
+.DS_Store
+Thumbs.db
+# dist is intentionally tracked for buildless Sites deployment.

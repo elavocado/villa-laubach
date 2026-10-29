@@ -1,11 +1,43 @@
-# Villa Laubach website
+# Villa Laubach
 
-Static German/English website. Serve `dist` as the web root. No runtime dependencies.
+German and English website for a former schoolhouse in Laubach, Eifel. Includes the house story, 25 gallery photos, excursions, credits and a local enquiry planner. No advertised prices.
 
-`python build.py` regenerates HTML and photographs using the adjacent research library and original owner photographs. CSS and JavaScript live in dist and are retained by the generator.
+[GitHub Pages preview](https://elavocado.github.io/villa-laubach/) · [GitHub repository](https://github.com/elavocado/villa-laubach)
 
-Private preview: no prices, no availability promises, no direct message submission. The planner creates a local draft for the Airbnb listing.
+## Setup
 
-Before public launch: confirm operator/contact and legal/privacy details, owner photo permissions, guest and outdoor-use terms, and remove preview/noindex directives only after approval of content. Research sources and image attribution are preserved in the research folder and website credits.
+Use Python 3.13, from this directory:
 
-Verified: bilingual navigation, local links/assets, gallery category filtering and modal, enquiry draft and guest limit, desktop and mobile views.
+```sh
+python -m venv .venv
+# Windows PowerShell:
+.venv\Scripts\Activate.ps1
+# macOS/Linux: source .venv/bin/activate
+python -m pip install -r requirements.txt
+python scripts/build.py
+python scripts/check.py
+python -m http.server 8310 --directory dist
+```
+
+Open http://localhost:8310/de/ or http://localhost:8310/en/. Stop with Ctrl+C. No sibling photo or research folders are needed.
+
+## Editing
+
+- Templates and bilingual copy: scripts/build.py
+- Styles and interactions: src/style.css and src/site.js
+- Original photos: assets/photos/
+- Photo provenance and licences: content/
+- Generated, deployable output: dist/ (rebuild instead of editing manually)
+
+## Handoff
+
+- [Structure and hosting](docs/architecture.md)
+- [GitHub handoff](docs/github-handoff.md)
+- [Launch checklist](docs/launch-checklist.md)
+- [Curated research](docs/research/README.md)
+
+Preview content: operator details and property photo rights need confirmation before public launch. The planner creates a local draft for Airbnb; it does not send messages or reserve dates. Regional photos retain their individual licences. No blanket open-source licence is assigned.
+
+## Deployment
+
+Pushes to main build, validate and deploy to GitHub Pages automatically. The workflow sets BASE_PATH=/villa-laubach and SITE_ORIGIN=https://elavocado.github.io/villa-laubach. Local and Sites builds keep their existing defaults. Pages is publicly accessible; preview labels and noindex remain until launch details are finalized.

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "dining",
+    "file": "assets/photos/property/dining.jpg",
+    "original_filename": "469790301.jpg",
+    "alt_de": "Essbereich mit hohen Fenstern",
+    "alt_en": "Dining area with tall windows",
+    "category": "property"
+  },
+  {
+    "id": "swing",
+    "file": "assets/photos/property/swing.jpg",
+    "original_filename": "469790359.jpg",
+    "alt_de": "Gartenschaukel im Grünen",
+    "alt_en": "Garden swing among the greenery",
+    "category": "property"
+  },
+  {
+    "id": "hall",
+    "file": "assets/photos/property/hall.jpg",
+    "original_filename": "469790368.jpg",
+    "alt_de": "Flur mit Spiegel und Treppenaufgang",
+    "alt_en": "Hallway with a mirror and staircase",
+    "category": "property"
+  },
+  {
+    "id": "wood",
+    "file": "assets/photos/property/wood.jpg",
+    "original_filename": "469790360.jpg",
+    "alt_de": "Brennholz und Details im Wohnbereich",
+    "alt_en": "Firewood and details in the living area",
+    "category": "property"
+  },
+  {
+    "id": "terracedetail",
+    "file": "assets/photos/property/terracedetail.jpg",
+    "original_filename": "469790417.jpg",
+    "alt_de": "Blumenkästen und gedeckter Terrassentisch",
+    "alt_en": "Window flowers and the terrace table",
+    "category": "property"
+  },
+  {
+    "id": "village",
+    "file": "assets/photos/region/village.jpg",
+    "original_filename": "laubach-st-josef-2020.jpg",
+    "alt_de": "St. Josef im Dorf Laubach",
+    "alt_en": "St. Josef in the village of Laubach",
+    "category": "region"
+  },
+  {
+    "id": "valley",
+    "file": "assets/photos/region/valley.jpg",
+    "original_filename": "kaulenbachtal-2023.jpg",
+    "alt_de": "Landschaft im Kaulenbachtal, 2023",
+    "alt_en": "Kaulenbach valley landscape, 2023",
+    "category": "region"
+  },
+  {
+    "id": "house",
+    "file": "assets/photos/property/house.jpg",
+    "original_filename": "469790413.jpg",
+    "alt_de": "Fassade und Terrasse der Villa Laubach",
+    "alt_en": "Façade and terrace of Villa Laubach",
+    "category": "property"
+  },
+  {
+    "id": "terrace",
+    "file": "assets/photos/property/terrace.jpg",
+    "original_filename": "469790334.jpg",
+    "alt_de": "Esstisch auf der Terrasse",
+    "alt_en": "Dining table on the terrace",
+    "category": "property"
+  },
+  {
+    "id": "living",
+    "file": "assets/photos/property/living.jpg",
+    "original_filename": "469790306.jpg",
+    "alt_de": "Wohnbereich der Villa Laubach",
+    "alt_en": "Living area at Villa Laubach",
+    "category": "property"
+  },
+  {
+    "id": "bedroom",
+    "file": "assets/photos/property/bedroom.jpg",
+    "original_filename": "469790289.jpg",
+    "alt_de": "Helles Schlafzimmer",
+    "alt_en": "Bright bedroom",
+    "category": "property"
+  },
+  {
+    "id": "bedroom2",
+    "file": "assets/photos/property/bedroom2.jpg",
+    "original_filename": "469790378.jpg",
+    "alt_de": "Schlafzimmer mit historischen Möbeln",
+    "alt_en": "Bedroom with vintage furniture",
+    "category": "property"
+  },
+  {
+    "id": "kitchen",
+    "file": "assets/photos/property/kitchen.jpg",
+    "original_filename": "469790354.jpg",
+    "alt_de": "Küche mit Waschmaschine",
+    "alt_en": "Kitchen with washing machine",
+    "category": "property"
+  },
+  {
+    "id": "stairs",
+    "file": "assets/photos/property/stairs.jpg",
+    "original_filename": "469790366.jpg",
+    "alt_de": "Treppenhaus des ehemaligen Schulhauses",
+    "alt_en": "Staircase of the former schoolhouse",
+    "category": "property"
+  },
+  {
+    "id": "detail",
+    "file": "assets/photos/property/detail.jpg",
+    "original_filename": "469790295.jpg",
+    "alt_de": "Detail der historischen Fassade",
+    "alt_en": "Detail of the historic façade",
+    "category": "property"
+  },
+  {
+    "id": "garden",
+    "file": "assets/photos/property/garden.jpg",
+    "original_filename": "469790409.jpg",
+    "alt_de": "Sitzplätze im Garten",
+    "alt_en": "Garden seating",
+    "category": "property"
+  },
+  {
+    "id": "stove",
+    "file": "assets/photos/property/stove.jpg",
+    "original_filename": "469790414.jpg",
+    "alt_de": "Ofen im Wohnbereich",
+    "alt_en": "Stove in the living area",
+    "category": "property"
+  },
+  {
+    "id": "kaulen",
+    "file": "assets/photos/region/kaulen.jpg",
+    "original_filename": "kaulenbachtal-slate.jpg",
+    "alt_de": "Schieferhalden im Kaulenbachtal",
+    "alt_en": "Slate heaps in the Kaulenbach valley",
+    "category": "region"
+  },
+  {
+    "id": "ulmen",
+    "file": "assets/photos/region/ulmen.jpg",
+    "original_filename": "ulmen-maar.jpg",
+    "alt_de": "Ulmener Maar",
+    "alt_en": "Ulmener Maar lake",
+    "category": "region"
+  },
+  {
+    "id": "monreal",
+    "file": "assets/photos/region/monreal.jpg",
+    "original_filename": "monreal-timber-houses.jpg",
+    "alt_de": "Fachwerkhäuser in Monreal",
+    "alt_en": "Timber-framed houses in Monreal",
+    "category": "region"
+  },
+  {
+    "id": "mosel",
+    "file": "assets/photos/region/mosel.jpg",
+    "original_filename": "bremm-moselle-bend-2020.jpg",
+    "alt_de": "Moselschleife bei Bremm",
+    "alt_en": "Moselle bend near Bremm",
+    "category": "region"
+  },
+  {
+    "id": "cochem",
+    "file": "assets/photos/region/cochem.jpg",
+    "original_filename": "cochem-panorama-2024.jpg",
+    "alt_de": "Blick auf Cochem und die Mosel",
+    "alt_en": "View over Cochem and the Moselle",
+    "category": "region"
+  },
+  {
+    "id": "oldcochem",
+    "file": "assets/photos/region/oldcochem.jpg",
+    "original_filename": "historic-cochem-photochrom.jpg",
+    "alt_de": "Historische Ansicht von Cochem, 1890–1905",
+    "alt_en": "Historic view of Cochem, 1890–1905",
+    "category": "region"
+  },
+  {
+    "id": "martental",
+    "file": "assets/photos/region/martental.jpg",
+    "original_filename": "maria-martental.jpg",
+    "alt_de": "Maria Martental im Winter",
+    "alt_en": "Maria Martental in winter",
+    "category": "region"
+  },
+  {
+    "id": "geierlay",
+    "file": "assets/photos/region/geierlay.jpg",
+    "original_filename": "geierlay-bridge.jpg",
+    "alt_de": "Hängeseilbrücke Geierlay im Hunsrück",
+    "alt_en": "Geierlay suspension bridge in the Hunsrück",
+    "category": "region"
+  }
+]
